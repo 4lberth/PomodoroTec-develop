@@ -104,6 +104,8 @@ class PomodoroViewModel(application: Application) : AndroidViewModel(application
             .setSmallIcon(R.drawable.pomodoro)
             .setContentTitle(title)
             .setContentText(message)
+            .setContentTitle("$title ⏳")
+            .setContentText("$message \uD83D\uDCCB")
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setContentIntent(pendingIntent)
             .setAutoCancel(true)
@@ -118,5 +120,6 @@ class PomodoroViewModel(application: Application) : AndroidViewModel(application
             }
             notify(MainActivity.NOTIFICATION_ID, builder.build())
         }
+
     }
 }
